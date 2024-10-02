@@ -1,0 +1,14 @@
+<%= link_to '新規投稿', '/tweets/new', class: "new-post" %>
+<div class="container">
+  <% @tweets.each do |tweet| %>
+    <div class="tweet">
+      <p class="tweet-message"><%= tweet.message %></p>
+      <p class="tweet-time"><%= (((Time.current - tweet.tdate) / 60).to_i).to_s + "分前" %></p>
+      <div class="tweet-links">
+        <%= link_to '表示', "/tweets/#{tweet.id}" %>
+        <%= link_to '編集', "/tweets/#{tweet.id}/edit", class: "edit" %>
+        <%= link_to '削除', "/tweets/#{tweet.id}", data: {turbo_method: :delete}, class: "delete" %>
+      </div>
+    </div>
+  <% end %>
+</div>
