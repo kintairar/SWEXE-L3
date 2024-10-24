@@ -57,4 +57,4 @@ group :test do
 end
 
 gem 'rails-i18n'
-gem "pg", "~> 1.4", group: :production
+gem "pg", "~> 1.5", group: :production
